@@ -1,0 +1,45 @@
+<div class="container">
+<header class="jumbotron">
+	<h1 class="container-heading">Burger Eater</h1>
+</header>
+
+<div class="burger">
+	<div id="newBurger">
+		<form class="create-form">
+			<input id="burger" type="text" name="burger_name" placeholder="Add Burger">
+			<button type="button" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+	</div>
+
+<br><br>
+	<section class="card">
+			<h2 class="card-header">Burger List</h2>
+			{{#each burgers}}
+				{{#unless devoured}}
+				  <div class="card-body burger">
+				    <form class="devour-form" method="POST">
+				  		<button type="button" class="btn btn-success">Eat!</button>
+				    </form>
+					<br>
+						<div style="text-align: center">{{burger_name}} <span>#{{id}}</span></div>
+				  </div>
+				{{/unless}}
+			{{/each}}
+			<br>
+	</section>
+<br><br>
+	<section class="card">
+			<h2 class="card-header">Devoured</h2>
+			<br>
+			{{#each burgers}}
+				{{#if devoured}}
+				  <div style="text-align: center">{{burger_name}} <span>#{{id}}</span></div>
+				{{/if}}
+			{{/each}}
+			<br>
+	</section>
+<br><br>
+	</section>
+</div>
+</div>
